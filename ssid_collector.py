@@ -2,6 +2,7 @@
 # program to scan and store SSIDs automatically while driving around
 from wifi import Cell, Scheme
 import os
+import re
 import csv
 import config
 import time
@@ -64,6 +65,7 @@ def insert_to_db():
         for row in data:
             time_taken = row[0]
             ssid = row[1]
+            ssid = re.escape(ssid)
             print time
             print ssid
             query = ("INSERT INTO {0} (time_taken, ssid) VALUES ('{1}', '{2}');").format(db_table, time_taken, ssid)
@@ -87,5 +89,4 @@ def main ():
         print "connected"
         insert_to_db()
     
-
 main()
