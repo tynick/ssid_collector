@@ -66,8 +66,6 @@ def insert_to_db():
             time_taken = row[0]
             ssid = row[1]
             ssid = re.escape(ssid)
-            print time
-            print ssid
             query = ("INSERT INTO {0} (time_taken, ssid) VALUES ('{1}', '{2}');").format(db_table, time_taken, ssid)
             print query
             cursor.execute(query)
