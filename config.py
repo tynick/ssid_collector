@@ -14,4 +14,4 @@ conn = dict(
         )
 
 # temp storage file
-csv = 'data_file.csv'
+csv = '/root/ssid_collector/data_file.csv'
